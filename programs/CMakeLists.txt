@@ -1,0 +1,5 @@
+add_subdirectory( nodltn )
+add_subdirectory( clltn )
+add_subdirectory( kltnd )
+add_subdirectory( ltnio-launcher )
+add_subdirectory( ltnio-blocklog )

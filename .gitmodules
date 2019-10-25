@@ -1,0 +1,20 @@
+[submodule "libraries/chainbase"]
+	path = libraries/chainbase
+	url = https://github.com/ltnio/chainbase
+        ignore = dirty
+[submodule "libraries/appbase"]
+	path = libraries/appbase
+	url = https://github.com/ltnio/appbase
+        ignore = dirty
+[submodule "libraries/softfloat"]
+	path = libraries/softfloat
+	url = https://github.com/ltnio/berkeley-softfloat-3
+[submodule "libraries/fc"]
+	path = libraries/fc
+	url = https://github.com/LTNIO/fc
+[submodule "libraries/wabt"]
+	path = libraries/wabt
+	url = https://github.com/LTNIO/wabt
+[submodule "libraries/yubihsm"]
+	path = libraries/yubihsm
+	url = https://github.com/Yubico/yubihsm-shell

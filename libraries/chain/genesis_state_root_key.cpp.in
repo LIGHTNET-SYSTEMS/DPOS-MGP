@@ -1,0 +1,12 @@
+/**
+ *  @file
+ *  @copyright defined in ltn/LICENSE
+ */
+
+#include <ltnio/chain/genesis_state.hpp>
+
+namespace ltnio { namespace chain {
+
+const string genesis_state::ltnio_root_key = "${LTNIO_ROOT_KEY}";
+
+} } // namespace ltnio::chain

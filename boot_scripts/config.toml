@@ -1,0 +1,23 @@
+[keosd]
+wallet_dir = './wallet/'
+http_server_address = '127.0.0.1:8866'
+private_key = '5KJKoaqZbgNTPKMaxxJutMfDimzGD3HACWpx3o7p4LFdbtMT8pY'
+public_key = 'EOS7LDyv52z4iCvksBUUi8ByB5xvRaFHAMRiVDfJythVuoc1rvag3'
+path = '/home/kstasi/eosio/1.8/bin/keosd '
+unlock_timeout = 999999999
+
+[cleos]
+path = '/home/kstasi/eosio/1.8/bin/cleos --url http://0.0.0.0:8000 '
+
+[nodeos]
+path = '/home/kstasi/eosio/1.8/bin/nodeos '
+
+[general]
+max_user_keys = 10
+user_limit = 10
+producer_limit = 2
+nodes_dir = './nodes/'
+genesis = './genesis.json'
+contracts_dir = '/home/kstasi/eosio.contracts/build/contracts'
+symbol = 'SYS'
+

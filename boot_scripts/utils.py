@@ -4,6 +4,7 @@ import subprocess
 import time
 import sys
 import os
+import json
 
 config = toml.load('./config.toml')
 
@@ -32,10 +33,9 @@ systemAccounts = [
     'eosio.token',
     'eosio.vpay',
     'eosio.rex',
-    # 'eosio.priv',
-    # 'eosio.team',
-    'eosio.market',
     'eosio.wrap',
+    'eosio.app',
+    'eosio.adrop',
 ]
 
 # general functions
@@ -53,6 +53,17 @@ def run(args):
 def background(args):
     print('bios:', args)
     return subprocess.Popen(args, shell=True)
+
+def retry(args):
+    while True:
+        print('bios:', args)
+        if subprocess.call(args, shell=True):
+            print('*** Retry')
+        else:
+            break
+
+def jsonArg(a):
+    return " '" + json.dumps(a) + "' "
 
 # blockchain-specific functions
 def startNode(nodeIndex, account):

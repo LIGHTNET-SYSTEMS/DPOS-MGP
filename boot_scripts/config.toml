@@ -33,4 +33,3 @@ min_producer_funds = 10.0000
 [accounts]
 priv_incentive_public_key = 'EOS7yBtksm8Kkg85r4in4uCbfN77uRwe82apM8jjbhFVDgEgz3w8S'
 team_holding_public_key = 'EOS8RpmTrNN7eEFno626tNutAKJbJ3TbMMyHi9sbmpU9t4vEYDAYM'
-market_public_key = 'EOS83fUneyFirnM82JT6PxgbJp5ZMxj757YJDQLFPQHKvaezRNDoX'

@@ -37,6 +37,7 @@ systemAccounts = [
     'eosio.wrap',
     'eosio.app',
     'eosio.adrop',
+    'eosio.market',
 ]
 
 # general functions

@@ -12,6 +12,5 @@ def resign(account, controller):
 
 if __name__ == '__main__':
     resign('eosio', 'eosio.prods')
-    resign('eosio.market', 'eosio')
     for a in systemAccounts:
         resign(a, 'eosio')

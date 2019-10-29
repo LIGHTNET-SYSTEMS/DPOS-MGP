@@ -20,6 +20,15 @@ nodes_dir = './nodes/'
 genesis = './genesis.json'
 contracts_dir = '/home/kstasi/eosio.contracts/build/contracts'
 symbol = 'SYS'
+num_voters = 10
+num_producers_vote = 20
+
+
+[funds]
+min_stake = 0.9
+max_unstaked = 10
+ram_funds = 50
+min_producer_funds = 10.0000
 
 [accounts]
 priv_incentive_public_key = 'EOS7yBtksm8Kkg85r4in4uCbfN77uRwe82apM8jjbhFVDgEgz3w8S'

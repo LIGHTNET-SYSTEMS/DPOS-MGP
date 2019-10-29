@@ -5,6 +5,7 @@ import time
 import sys
 import os
 import json
+import random
 
 config = toml.load('./config.toml')
 
@@ -62,8 +63,16 @@ def retry(args):
         else:
             break
 
+def getOutput(args):
+    print('bios:', args)
+    proc = subprocess.Popen(args, shell=True, stdout=subprocess.PIPE)
+    return proc.communicate()[0].decode('utf-8')
+
 def jsonArg(a):
     return " '" + json.dumps(a) + "' "
+
+def getJsonOutput(args):
+    return json.loads(getOutput(args))
 
 # blockchain-specific functions
 def startNode(nodeIndex, account):
@@ -112,3 +121,27 @@ def intToCurrency(i):
 
 def listProducers():
     run(config['cleos']['path'] + 'system listproducers')
+
+def vote(b, e):
+    for i in range(b, e):
+        voter = accounts[i]['name']
+        k = config['general']['num_producers_vote']
+        if k > numProducers:
+            k = numProducers - 1
+        prods = random.sample(range(firstProducer, firstProducer + numProducers), k)
+        prods = ' '.join(map(lambda x: accounts[x]['name'], prods))
+        retry(config['cleos']['path'] + 'system voteproducer prods ' + voter + ' ' + prods)
+
+def updateAuth(account, permission, parent, controller):
+    run(config['cleos']['path'] + 'push action eosio updateauth' + jsonArg({
+        'account': account,
+        'permission': permission,
+        'parent': parent,
+        'auth': {
+            'threshold': 1, 'keys': [], 'waits': [],
+            'accounts': [{
+                'weight': 1,
+                'permission': {'actor': controller, 'permission': 'active'}
+            }]
+        }
+    }) + '-p ' + account + '@' + permission)

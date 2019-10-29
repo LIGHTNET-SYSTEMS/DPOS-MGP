@@ -8,7 +8,7 @@ def msigPropose(proposer, proposalName, proposition):
     requestedPermissions = []
     for i in range(firstProducer, firstProducer + numProducers):
         requestedPermissions.append({'actor': accounts[i]['name'], 'permission': 'active'})
-    trxPermissions = [{'actor': 'eosio', 'permission': 'active'}]
+    trxPermissions = [{'actor': 'eosio.market', 'permission': 'active'}]
     run(config['cleos']['path'] + 'multisig propose ' + proposalName + jsonArg(requestedPermissions) + 
         jsonArg(trxPermissions) + 'eosio.token transfer' + jsonArg(proposition) + ' -p ' + proposer)
 

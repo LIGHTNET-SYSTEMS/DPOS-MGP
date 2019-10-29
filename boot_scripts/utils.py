@@ -109,3 +109,6 @@ def startNode(nodeIndex, account):
 
 def intToCurrency(i):
     return '%d.%04d %s' % (i // 10000, i % 10000, config['general']['symbol'])
+
+def listProducers():
+    run(config['cleos']['path'] + 'system listproducers')

@@ -15,7 +15,7 @@ path = '/home/kstasi/eosio/1.8/bin/nodeos '
 [general]
 max_user_keys = 10
 user_limit = 10
-producer_limit = 2
+producer_limit = 21
 nodes_dir = './nodes/'
 genesis = './genesis.json'
 contracts_dir = '/home/kstasi/eosio.contracts/build/contracts'

@@ -111,11 +111,12 @@ def startNode(nodeIndex, account):
         f.write(cmd + '\n\n')
     background(cmd + '    2>>' + dir + 'stderr')
     sleep(1)
-    cmd = 'curl -X POST http://0.0.0.0:'+ str(8000 + nodeIndex) +'/v1/producer/schedule_protocol_feature_activations -d \'{"protocol_features_to_activate": ["0ec7e080177b2c02b278d5088611686b49d739925a92d9bfcacd7fc6b74053bd"]}\' '
-    with open(dir + 'stderr', mode='w') as f:
-        f.write(cmd + '\n\n')
-    background(cmd + '    2>>' + dir + 'stderr')
-    sleep(2)
+    if nodeIndex == 0:
+        cmd = 'curl -X POST http://0.0.0.0:'+ str(8000 + nodeIndex) +'/v1/producer/schedule_protocol_feature_activations -d \'{"protocol_features_to_activate": ["0ec7e080177b2c02b278d5088611686b49d739925a92d9bfcacd7fc6b74053bd"]}\' '
+        with open(dir + 'stderr', mode='w') as f:
+            f.write(cmd + '\n\n')
+        background(cmd + '    2>>' + dir + 'stderr')
+        sleep(2)
 
 def intToCurrency(i):
     return '%d.%04d %s' % (i // 10000, i % 10000, config['general']['symbol'])

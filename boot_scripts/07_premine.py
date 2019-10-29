@@ -15,7 +15,7 @@ def premine():
     retry(config['cleos']['path'] + 'system newaccount --transfer eosio eosio.team %s --stake-net "%s" --stake-cpu "%s" --buy-ram "%s"   ' % 
             (config['accounts']['team_holding_public_key'], intToCurrency(teamHoldingPremine / 2 - ram_funds / 2), intToCurrency(teamHoldingPremine / 2  - ram_funds / 2), intToCurrency(ram_funds)))
     retry(config['cleos']['path'] + 'system newaccount --transfer eosio eosio.market %s --stake-net "%s" --stake-cpu "%s" --buy-ram "%s"   ' % 
-            (config['accounts']['market_public_key'], intToCurrency(marketPremine / 2 - ram_funds / 2), intToCurrency(marketPremine / 2 - ram_funds / 2), intToCurrency(ram_funds)))
+            (config['keosd']['public_key'], intToCurrency(marketPremine / 2 - ram_funds / 2), intToCurrency(marketPremine / 2 - ram_funds / 2), intToCurrency(ram_funds)))
     
     retry(config['cleos']['path'] + 'transfer eosio eosio.app "%s"     ' %  (intToCurrency(commercialApplicationsPremine)))
     retry(config['cleos']['path'] + 'transfer eosio eosio.adrop "%s"     ' %  (intToCurrency(airdropsPremine)))

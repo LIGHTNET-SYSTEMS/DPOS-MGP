@@ -1,6 +1,6 @@
 import toml
 import random
-from utils import run, accounts, sleep, updateAuth
+from utils import run, accounts, sleep, updateAuth, systemAccounts
 
 config = toml.load('./config.toml')
 
@@ -12,5 +12,6 @@ def resign(account, controller):
 
 if __name__ == '__main__':
     resign('eosio', 'eosio.prods')
+    resign('eosio.market', 'eosio')
     for a in systemAccounts:
         resign(a, 'eosio')

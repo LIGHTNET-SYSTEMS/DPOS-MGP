@@ -17,3 +17,4 @@ python3 15_get_nodeos_logs.py
 python3 16_propose_transfer.py
 python3 17_approve_transfer.py
 python3 18_execute_transfer.py
+python3 19_unstake_team_reward.py

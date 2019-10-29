@@ -9,13 +9,13 @@ commercialApplicationsPremine = 200000000000
 teamHoldingPremine = 400000000000
 
 def premine():
-    ram_funds = 100000
+    ram_funds = 10000
     retry(config['cleos']['path'] + 'system newaccount --transfer eosio eosio.priv %s --stake-net "%s" --stake-cpu "%s" --buy-ram "%s"' % 
-            (config['accounts']['priv_incentive_public_key'], intToCurrency(privateIncentivePremine - ram_funds / 2), intToCurrency(privateIncentivePremine - ram_funds / 2), intToCurrency(ram_funds)))
+            (config['accounts']['priv_incentive_public_key'], intToCurrency(privateIncentivePremine / 2 - ram_funds / 2), intToCurrency(privateIncentivePremine / 2- ram_funds / 2), intToCurrency(ram_funds)))
     retry(config['cleos']['path'] + 'system newaccount --transfer eosio eosio.team %s --stake-net "%s" --stake-cpu "%s" --buy-ram "%s"   ' % 
-            (config['accounts']['team_holding_public_key'], intToCurrency(teamHoldingPremine - ram_funds / 2), intToCurrency(teamHoldingPremine  - ram_funds / 2), intToCurrency(ram_funds)))
+            (config['accounts']['team_holding_public_key'], intToCurrency(teamHoldingPremine / 2 - ram_funds / 2), intToCurrency(teamHoldingPremine / 2  - ram_funds / 2), intToCurrency(ram_funds)))
     retry(config['cleos']['path'] + 'system newaccount --transfer eosio eosio.market %s --stake-net "%s" --stake-cpu "%s" --buy-ram "%s"   ' % 
-            (config['accounts']['market_public_key'], intToCurrency(marketPremine - ram_funds / 2), intToCurrency(marketPremine  - ram_funds / 2), intToCurrency(ram_funds)))
+            (config['accounts']['market_public_key'], intToCurrency(marketPremine / 2 - ram_funds / 2), intToCurrency(marketPremine / 2 - ram_funds / 2), intToCurrency(ram_funds)))
     
     retry(config['cleos']['path'] + 'transfer eosio eosio.app "%s"     ' %  (intToCurrency(commercialApplicationsPremine)))
     retry(config['cleos']['path'] + 'transfer eosio eosio.adrop "%s"     ' %  (intToCurrency(airdropsPremine)))

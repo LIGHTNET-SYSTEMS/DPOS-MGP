@@ -29,12 +29,14 @@ systemAccounts = [
     'eosio.names',
     'eosio.ram',
     'eosio.ramfee',
-    'eosio.saving',
     'eosio.stake',
     'eosio.token',
     'eosio.vpay',
     'eosio.rex',
     'eosio.wrap',
+]
+
+fundAccounts = [
     'market',
     'airdrops',
     'app'

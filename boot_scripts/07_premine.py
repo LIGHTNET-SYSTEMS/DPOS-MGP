@@ -15,9 +15,9 @@ def premine():
     retry(config['cleos']['path'] + 'system newaccount --transfer eosio eosio.team %s --stake-net "%s" --stake-cpu "%s" --buy-ram "%s"   ' % 
             (config['accounts']['team_holding_public_key'], intToCurrency(teamHoldingPremine / 2 - ram_funds / 2), intToCurrency(teamHoldingPremine / 2  - ram_funds / 2), intToCurrency(ram_funds)))
     
-    retry(config['cleos']['path'] + 'transfer eosio eosio.app "%s"     ' %  (intToCurrency(commercialApplicationsPremine)))
-    retry(config['cleos']['path'] + 'transfer eosio eosio.market "%s"     ' %  (intToCurrency(marketPremine)))
-    retry(config['cleos']['path'] + 'transfer eosio eosio.adrop "%s"     ' %  (intToCurrency(airdropsPremine)))
+    retry(config['cleos']['path'] + 'transfer eosio app "%s"     ' %  (intToCurrency(commercialApplicationsPremine)))
+    retry(config['cleos']['path'] + 'transfer eosio market "%s"     ' %  (intToCurrency(marketPremine)))
+    retry(config['cleos']['path'] + 'transfer eosio airdrops "%s"     ' %  (intToCurrency(airdropsPremine)))
 
 if __name__ == '__main__':
     premine()

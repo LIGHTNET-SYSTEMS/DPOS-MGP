@@ -31,5 +31,8 @@ ram_funds = 50
 min_producer_funds = 10.0000
 
 [accounts]
-priv_incentive_public_key = 'EOS7yBtksm8Kkg85r4in4uCbfN77uRwe82apM8jjbhFVDgEgz3w8S'
-team_holding_public_key = 'EOS8RpmTrNN7eEFno626tNutAKJbJ3TbMMyHi9sbmpU9t4vEYDAYM'
+priv_incentive_public_key = 'EOS5mqGCPXQMyJkJBjM2o4kpsG8hynfg85pPRsm9C8mURPrALz1gp'
+team_holding_public_key = 'EOS7Vtc38KcTyTc72pMLe9HMuVWXUMXmXmZyQRzD6WgspjpFsfokx'
+app_public_key = 'EOS6CJ8cgcJhYdSNSA9xw7AygyN4mM5gHdDSkfEMXGmpdDaDeE9GM'
+market_public_key = 'EOS8Y1JNXSoaw4mJDqyFR21prE1jkiZKWDYR62FACswPZMvM17i6y'
+airdrops_public_key = 'EOS5sqWEcEHhnMKjpbjBzZGXuQNxGHdnjkncEtVChpirApa5YCn4k'

@@ -37,10 +37,10 @@ def createStakedAccounts(b, e):
         stakeCpu = stake - stakeNet
         print('%s: total funds=%s, ram=%s, net=%s, cpu=%s, unstaked=%s' % (a['name'], intToCurrency(a['funds']), intToCurrency(ramFunds), intToCurrency(stakeNet), intToCurrency(stakeCpu), intToCurrency(unstaked)))
         assert(funds == ramFunds + stakeNet + stakeCpu + unstaked)
-        retry(config['cleos']['path'] + 'system newaccount --transfer eosio.adrop %s %s --stake-net "%s" --stake-cpu "%s" --buy-ram "%s"   ' % 
+        retry(config['cleos']['path'] + 'system newaccount --transfer airdrops %s %s --stake-net "%s" --stake-cpu "%s" --buy-ram "%s" ' % 
             (a['name'], a['pub'], intToCurrency(stakeNet), intToCurrency(stakeCpu), intToCurrency(ramFunds)))
         if unstaked:
-            retry(config['cleos']['path'] + 'transfer eosio.adrop %s "%s"' % (a['name'], intToCurrency(unstaked)))
+            retry(config['cleos']['path'] + 'transfer airdrops %s "%s"' % (a['name'], intToCurrency(unstaked)))
 
 if __name__ == '__main__':
     allocateFunds(0, len(accounts))

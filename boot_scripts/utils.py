@@ -35,9 +35,9 @@ systemAccounts = [
     'eosio.vpay',
     'eosio.rex',
     'eosio.wrap',
-    'eosio.app',
-    'eosio.adrop',
-    'eosio.market',
+    'market',
+    'airdrops',
+    'app'
 ]
 
 # general functions

@@ -1,6 +1,6 @@
 import toml
 import random
-from utils import run, accounts, sleep, updateAuth, systemAccounts
+from utils import run, accounts, sleep, updateAuth, systemAccounts, fundAccounts, updateKey
 
 config = toml.load('./config.toml')
 
@@ -14,3 +14,6 @@ if __name__ == '__main__':
     resign('eosio', 'eosio.prods')
     for a in systemAccounts:
         resign(a, 'eosio')
+    for a in fundAccounts:
+        updateKey(a, 'active', config['accounts'][a + '_public_key'])    
+        updateKey(a, 'owner', config['accounts'][a + '_public_key'])    

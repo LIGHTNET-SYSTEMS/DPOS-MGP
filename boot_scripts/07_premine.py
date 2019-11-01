@@ -21,3 +21,4 @@ def premine():
 
 if __name__ == '__main__':
     premine()
+    

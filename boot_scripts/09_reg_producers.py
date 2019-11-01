@@ -11,3 +11,4 @@ if __name__ == '__main__':
     regProducers(firstProducer, firstProducer + numProducers)
     sleep(1)
     listProducers()
+    

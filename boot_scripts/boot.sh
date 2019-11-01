@@ -14,7 +14,3 @@ python3 12_claim_reward.py
 python3 13_proxy_vote.py
 python3 14_resign.py
 python3 15_get_nodeos_logs.py
-# python3 16_propose_transfer.py
-# python3 17_approve_transfer.py
-# python3 18_execute_transfer.py
-# python3 19_unstake_team_reward.py

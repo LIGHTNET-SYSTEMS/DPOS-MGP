@@ -152,3 +152,4 @@ def updateAuth(account, permission, parent, controller):
 
 def updateKey(account, permission, publicKey):
     run(config['cleos']['path'] + 'set account permission %s %s %s -p %s@owner' % (account, permission, publicKey, account))
+    

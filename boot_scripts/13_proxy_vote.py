@@ -17,3 +17,4 @@ if __name__ == '__main__':
     proxyVote(0, 0 + config['general']['num_voters'])
     sleep(1)
     listProducers()
+    
